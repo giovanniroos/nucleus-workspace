@@ -1,1 +1,15 @@
-<p>task works!</p>
+<div class="task-container">
+    <input  #checkedInput
+      type="checkbox" 
+      [checked]="task?.isCompleted" 
+      (change)="complete.emit(checkedInput.checked)"
+    />
+    <span 
+      [ngClass]="{'completed': task?.isCompleted}"  
+      class="task-title"
+    >
+     {{task?.title}}
+    </span>
+  
+    <button (click)="remove.emit(task?.id)">X</button>
+  </div>
