@@ -33,3 +33,16 @@ https://moduscreate.com/blog/how-to-mock-data-in-angular-applications/
 >json-server --watch C:/dev/tools/json_server/tasks.json --port 3000
 
 Monitor data on: http://localhost:3000/tasks
+
+[
+	{
+		"title": "BBB",
+		"isCompleted": true,
+		"id": 2
+	},
+	{
+		"title": "AAA",
+		"isCompleted": false,
+		"id": 3
+	}
+]
