@@ -25,3 +25,11 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Mock data base
+
+https://moduscreate.com/blog/how-to-mock-data-in-angular-applications/
+
+>json-server --watch C:/dev/tools/json_server/tasks.json --port 3000
+
+Monitor data on: http://localhost:3000/tasks
