@@ -22,9 +22,7 @@ export class TaskListComponent {
 
   completeTask(task: Task, isCompleted: boolean){
     console.log(JSON.stringify(task));
-    if(task && task.id){
-      this.taskStore.setCompleted(task.id, isCompleted);
-    }
+    this.taskStore.setCompleted(task.id, isCompleted);
   }
 }
 
