@@ -70,7 +70,7 @@ export class TaskStoreService {
         //   .toPromise();
 
         const task: Task = await firstValueFrom(this.taskService
-          .create({title, isCompleted: false}));
+          .create(tmptask));
 
         // we swap the local tmp record with the record from the server (id must be updated)
         const index = this.tasks.findIndex((t) => t.id === tmpId);
