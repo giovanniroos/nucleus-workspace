@@ -42,15 +42,22 @@ https://moduscreate.com/blog/how-to-mock-data-in-angular-applications/
 
 Monitor data on: http://localhost:3000/tasks
 
-[
-	{
-		"title": "BBB",
-		"isCompleted": true,
-		"id": 2
-	},
-	{
-		"title": "AAA",
-		"isCompleted": false,
-		"id": 3
-	}
-]
+{
+  "tasks": [
+    {
+      "title": "BBB",
+      "isCompleted": true,
+      "id": 2
+    },
+    {
+      "title": "AAA",
+      "isCompleted": false,
+      "id": 3
+    },
+    {
+      "title": "CCC",
+      "isCompleted": true,
+      "id": 4
+    }
+  ]
+}
