@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {BehaviorSubject, Observable, firstValueFrom} from 'rxjs'
-import {shareReplay, map} from 'rxjs/operators'
+import {map} from 'rxjs/operators'
 import { uuid } from '../../utils/uuid';
 import { Task } from '../models/task.model';
 import {TaskService} from '../services/task.service';
@@ -26,11 +26,11 @@ export class TaskStoreService {
 
 
   // we'll compose the tasks$ observable with map operator to create a stream of only completed tasks
-  readonly completedtasks$ = this.tasks$.pipe(
+  readonly completedTasks$ = this.tasks$.pipe(
     map(tasks => tasks.filter(task => task.isCompleted))
   )
 
-  readonly uncompletedtasks$ = this.tasks$.pipe(
+  readonly uncompletedTasks$ = this.tasks$.pipe(
     map(tasks => tasks.filter(task => !task.isCompleted))
   )
 
@@ -46,7 +46,7 @@ export class TaskStoreService {
     this._tasks.next(val);
   }
 
-  async addtask(title: string) {
+  async addTask(title: string) {
 
     if(title && title.length) {
 
@@ -83,14 +83,14 @@ export class TaskStoreService {
       } catch (e) {
         // is server sends back an error, we revert the changes
         console.error(e);
-        this.removetask(tmpId, false);
+        this.removeTask(tmpId, false);
       }
       
     }
 
   }
 
-  async removetask(id: string, serverRemove = true) {
+  async removeTask(id: string, serverRemove = true) {
     // optimistic update
     const task = this.tasks.find(t => t.id === id);
     this.tasks = this.tasks.filter(task => task.id !== id);
@@ -108,23 +108,17 @@ export class TaskStoreService {
 
   async setCompleted(id: string, isCompleted: boolean) {
     let task = this.tasks.find(task => task.id === id);
-
     if(task) {
       // optimistic update
       const index = this.tasks.indexOf(task);
-
       this.tasks[index] = {
         ...task,
         isCompleted
       }
-
       this.tasks = [...this.tasks];
-
       try {
         await firstValueFrom(this.taskService.setCompleted(id, isCompleted));
-
       } catch (e) {
-
         console.error(e);
         this.tasks[index] = {
           ...task,

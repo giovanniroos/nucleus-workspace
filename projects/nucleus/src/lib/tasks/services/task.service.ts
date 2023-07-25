@@ -4,7 +4,7 @@ import { Task } from '../models/task.model';
 
 @Injectable({providedIn: 'root'})
 export class TaskService {
-  private readonly apiBaseUrl = 'https://5c6716e624e2140014f9ee66.mockapi.io/tasks';
+  private readonly apiBaseUrl = 'http://localhost:3000';
 
   constructor(private http: HttpClient) { }
 
@@ -24,7 +24,7 @@ export class TaskService {
   }
 
   setCompleted(id: string, isCompleted: boolean) {
-    return this.http.put<Task>(`${this.apiBaseUrl}/tasks/${id}`, {isCompleted});
+    return this.http.patch<Task>(`${this.apiBaseUrl}/tasks/${id}`, {isCompleted});
   }
 
 }

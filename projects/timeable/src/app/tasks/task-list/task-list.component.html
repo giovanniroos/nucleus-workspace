@@ -1,0 +1,31 @@
+
+<input (keyup.enter)="onAddTask(taskTitleInput.value)" #taskTitleInput type="text" placeholder="Task title...">
+
+<button (click)="onAddTask(taskTitleInput.value)">ADD</button>
+
+<div class="all-tasks">
+
+  <p>Uncompleted Tasks:</p>
+
+  <lib-task 
+    *ngFor="let task of taskStore.uncompletedTasks$ | async"
+    [task]="task"
+    (complete)="completeTask(task, $event)"
+    (remove)="taskStore.removeTask($event)"
+  ></lib-task>
+</div>
+
+<hr/>
+
+<div class="all-tasks">
+
+  <p>Completed Tasks:</p>
+
+  <lib-task 
+    *ngFor="let task of taskStore.completedTasks$ | async"
+    [task]="task"
+    (complete)="completeTask(task, $event)"
+    (remove)="taskStore.removeTask($event)"
+  ></lib-task>
+</div>
+

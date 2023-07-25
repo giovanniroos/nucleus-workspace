@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NucleusModule, TasksModule } from 'nucleus'
+import { TaskListModule } from './tasks/task-list.module';
 
 @NgModule({
   declarations: [
@@ -13,12 +14,15 @@ import { NucleusModule, TasksModule } from 'nucleus'
     BrowserModule,
     AppRoutingModule,
     NucleusModule,
-    TasksModule
+    TasksModule,
+    TaskListModule
   ],
   exports: [
     
   ],
-  providers: [],
+  providers: [
+    // TaskStoreService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
