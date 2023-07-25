@@ -1,9 +1,12 @@
 # NucleusWorkspace
 
 State management in Angular
-https://dev.to/avatsaev/simple-state-management-in-angular-with-only-services-and-rxjs-41p8
+
 Angular Workspace with one application and one library.
 Contains low-level task component in the lib and smart task-list component in the app and data managment with a data store wrapping a rsjx service that gets (mock) data from json-server.
+
+Inspired by:
+https://dev.to/avatsaev/simple-state-management-in-angular-with-only-services-and-rxjs-41p8
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.4.
 
