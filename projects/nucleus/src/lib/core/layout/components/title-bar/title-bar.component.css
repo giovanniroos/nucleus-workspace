@@ -1,0 +1,11 @@
+.image-and-text {
+    background-image: url("../../../../../../assets/images/rocket.png");
+    background-size: contain; /* Adjust background image size as needed */
+    background-repeat: no-repeat; /* Prevent repeating the background image */
+    display: inline-block; /* Make the container inline to display the h1 next to the background image */
+    padding-left: 40px; /* Add some spacing on the left to prevent text overlapping the image */
+  }
+  
+.image-and-text h1 {
+    margin: 0; /* Remove default margins for the h1 element */
+  }

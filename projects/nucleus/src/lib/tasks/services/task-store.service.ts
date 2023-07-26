@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {BehaviorSubject, Observable, firstValueFrom} from 'rxjs'
 import {map} from 'rxjs/operators'
-import { uuid } from '../../utils/uuid';
+import { uuid } from '../../core/utils/uuid';
 import { Task } from '../models/task.model';
 import {TaskService} from '../services/task.service';
 

@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { NucleusModule, TasksModule } from 'nucleus'
+import { NucleusModule, TasksModule,  CoreModule } from 'nucleus'
 import { TaskListModule } from './tasks/task-list.module';
 
 @NgModule({
@@ -15,6 +15,7 @@ import { TaskListModule } from './tasks/task-list.module';
     AppRoutingModule,
     NucleusModule,
     TasksModule,
+    CoreModule,
     TaskListModule
   ],
   exports: [
