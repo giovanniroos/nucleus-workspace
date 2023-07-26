@@ -3,7 +3,7 @@
 State management in Angular
 
 Angular Workspace with one application and one library.
-Contains low-level task component in the lib and smart task-list component in the app and data managment with a data store wrapping a rsjx service that gets (mock) data from json-server.
+Contains low-level task component in the lib and smart task-list component in the app and data managment with a data store wrapping a rsjx service that gets (mock REST API) data from json-server.
 
 Inspired by:
 https://dev.to/avatsaev/simple-state-management-in-angular-with-only-services-and-rxjs-41p8
@@ -34,7 +34,7 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
-## Mock data base
+## Mock REST API
 
 https://moduscreate.com/blog/how-to-mock-data-in-angular-applications/
 
